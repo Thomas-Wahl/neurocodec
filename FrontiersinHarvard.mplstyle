@@ -1,0 +1,16 @@
+# FontiersinHarvard.cls font
+text.usetex: True
+font.family: Times
+font.size: 12.
+
+figure.figsize: 3.5, 1.5 # FrontiersinHarvard.cls \linewidth = 7 inches
+figure.constrained_layout.use: True
+
+axes.xmargin: 0.
+axes.titlelocation: left
+axes.spines.right: False
+axes.spines.top: False
+axes.axisbelow: False
+
+xtick.direction: in
+ytick.direction: in
