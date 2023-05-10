@@ -573,6 +573,8 @@ def ctcl():
         .replace('%', '\%'),
         loc='right'
     )
+    axes['D1'].set_ylabel('$\\alpha$-activity')
+    axes['D2'].set_ylabel('$\\gamma$-activity')
     compare = ((0, 1), (1, 2))
     labels = 'resting state', 'stimulated state', 'target'
     plot.bode(axes['A'], axes['B'], Gresp, 'Hz', **kwargs['G'])
