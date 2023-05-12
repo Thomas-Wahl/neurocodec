@@ -8,6 +8,7 @@ import model
 import series
 import control
 from matplotlib import pyplot
+from matplotlib import patches
 
 
 pyplot.style.use('FrontiersinHarvard.mplstyle')
@@ -595,6 +596,35 @@ def ctcl():
         loc='lower right',
         ncol=3
     )
+    save(name)
+    pyplot.show()
+
+
+def stab():
+    name = stab.__name__
+    with open('stab.csv') as file:
+        file.readline()
+        s = ((float(x) for x in line.split(',')) for line in file)
+        a, tau3, tau5, tau10 = zip(*s)
+    x = a[0]
+    y = 0
+    width = a[-1] - x
+    height = max(tau3[-1], tau5[-1], tau10[-1]) - y
+    rect = patches.Rectangle((x, y), width, height, color='C7')
+    fig = pyplot.figure(name)
+    fig.set_figwidth(fig.get_figwidth() * 1.5)
+    #fig.set_figheight(fig.get_figheight() * 2)
+    ax = pyplot.subplot2grid((1, 3), (0, 0), 1, 2)
+    ax.set_xlabel('a')
+    ax.set_ylabel('pole mag. [dB]')
+    ax.add_patch(rect)
+    ax.plot(a, control.mag2db(tau3), 'k', label='$\\tau$ = 3ms')
+    ax.plot(a, control.mag2db(tau5), 'k--', label='$\\tau$ = 5ms')
+    ax.plot(a, control.mag2db(tau10), 'k:', label='$\\tau$ = 10ms')
+    ax.text(.6, .075, 'unstable')
+    ax.text(.6, -.2, 'stable')
+    ax.set_ylim(-.25, .25)
+    fig.legend(*ax.get_legend_handles_labels())
     save(name)
     pyplot.show()
 

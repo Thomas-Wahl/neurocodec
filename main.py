@@ -2,11 +2,12 @@ import figure
 
 def main():
     #figure.rest()
-    figure.fit()
+    #figure.fit()
     #figure.fits()
     #figure.rob()
     #figure.cl()
     #figure.ctcl()
+    figure.stab()
     #figure.tf()
 
 
