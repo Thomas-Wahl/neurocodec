@@ -5,9 +5,9 @@ def main():
     #figure.fit()
     #figure.fits()
     #figure.rob()
-    #figure.cl()
+    figure.cl()
     #figure.ctcl()
-    figure.stab()
+    #figure.stab()
     #figure.tf()
 
 

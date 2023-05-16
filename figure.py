@@ -292,9 +292,9 @@ def cl():
         'actv': dict(color=('C0', 'C1', 'C4', 'C3', 'C7')),
     }
     cmp = {
-        'alpha': ((0, 1), (1, 3), (2, 4), (3, 4)),
-        'gamma': ((0, 1), (0, 2), (2, 3), (3, 4)),
-        'uampl': ((0, 1), (1, 2))
+        'alpha': ((1, 4), (2, 4), (3, 4)),
+        'gamma': ((1, 4), (2, 4), (3, 4)),
+        'uampl': ((0, 1), (1, 2), (0, 2))
     }
     labels = 'resting state', 'PI', 'LQG', 'ours', 'target'
     plot.time_series(axes['A1'], ursps['pi'][0], 's', tbounds=win, **kw['u'])
